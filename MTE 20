@@ -1,0 +1,24 @@
+// 20. Count all numbers with unique digits for a given number of digits
+
+public class UniqueDigitCount {
+    public static void main(String[] args) {
+        int n = 2;
+        System.out.println("Count of unique digit numbers: " + countNumbersWithUniqueDigits(n));
+    }
+
+    public static int countNumbersWithUniqueDigits(int n) {
+        if (n == 0) return 1;
+        int result = 10, uniqueDigits = 9, availableNumber = 9;
+
+        while (n-- > 1 && availableNumber > 0) {
+            uniqueDigits *= availableNumber;
+            result += uniqueDigits;
+            availableNumber--;
+        }
+
+        return result;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
