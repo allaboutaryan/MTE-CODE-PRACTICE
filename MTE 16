@@ -1,0 +1,24 @@
+// 16. Find the majority element in an array that appears more than n/2 times
+
+public class MajorityElement {
+    public static void main(String[] args) {
+        int[] nums = {2, 2, 1, 1, 2, 2, 2};
+        System.out.println("Majority Element: " + findMajorityElement(nums));
+    }
+
+    public static int findMajorityElement(int[] nums) {
+        int count = 0, candidate = 0;
+
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            count += (num == candidate) ? 1 : -1;
+        }
+
+        return candidate;
+    }
+}
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
