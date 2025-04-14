@@ -1,0 +1,22 @@
+// 29. Write a program to check if an integer is a palindrome without converting it to a string
+
+public class PalindromeNumber {
+    public static void main(String[] args) {
+        int num = 121;
+        System.out.println(num + " is palindrome: " + isPalindrome(num));
+    }
+
+    public static boolean isPalindrome(int x) {
+        if (x < 0) return false; // (Negative numbers are not palindromes)
+        int original = x, reversed = 0;
+        while (x != 0) {
+            int digit = x % 10;
+            reversed = reversed * 10 + digit;
+            x /= 10;
+        }
+        return original == reversed;
+    }
+}
+
+// Time Complexity: O(log n), where n is the number of digits in the number
+// Space Complexity: O(1)
