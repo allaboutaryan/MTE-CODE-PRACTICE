@@ -1,4 +1,4 @@
-// 8. Find the longest palindromic substring in a given string
+// . Find the longest palindromic substring in a given string
 
 public class LongestPalindromicSubstring {
     public static void main(String[] args) {
